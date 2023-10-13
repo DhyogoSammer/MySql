@@ -1,0 +1,20 @@
+- Números:
+	- Inteiros (INT, INTEGER): Representa números inteiros, positivos ou negativos, sem casas decimais.
+	- Números de ponto flutuante (FLOAT, DOUBLE): Representa números com casas decimais.
+- Texto:
+	- Caractere (CHAR, CHARACTER): Armazena uma sequência fixa de caracteres.
+	- Varchar (VARCHAR, VARIABLE CHARACTER): Armazena uma sequência variável de caracteres.
+	- Texto (TEXT): Usado para armazenar grandes quantidades de texto.
+- Datas e Horas:
+	- Data (DATE): Armazena datas (ano, mês e dia).
+	- Hora (TIME): Armazena horários do dia.
+	- Data e Hora (DATETIME, TIMESTAMP): Armazena data e horário juntos.
+- Booleano:
+	- Booleano (BOOL, BOOLEAN): Armazena valores verdadeiro (TRUE) ou falso (FALSE).
+- Imagens e Arquivos:
+	- Blob (BINARY LARGE OBJECT): Usado para armazenar dados binários, como imagens, áudio ou outros tipos de arquivos.
+- Outros Tipos Especiais:
+	- Enumeração (ENUM): Define um conjunto de valores possíveis.
+	- Conjunto (SET): Similar a ENUM, mas pode armazenar múltiplos valores selecionados.
+- Tipos Geoespaciais (para Sistemas de Informações Geográficas):
+	- Pontos, linhas, polígonos, etc., utilizados para representar informações geográficas.
