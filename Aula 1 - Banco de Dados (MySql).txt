@@ -1,0 +1,40 @@
+- Registros = São os dados que estão dentro das tabelas.
+
+- Campos = São as informações que estão dentro dos registros
+
+- Tabelas = Armazenam dados de estruturas semelhantes.
+
+- Banco de dados = São um conjunto de Tabelas
+- Tabelas = São um conjunto de Registros
+- Registros = São um conjunto de Campos
+
+- Comando para criar meu banco de dados : 
+- CREATE DATABASE nome;
+
+- Comando para criar minhas tabelas :
+- CREATE TABLE nome (
+	);             <---- Esse ponto e virgula indica o fim do programa.
+	
+- Comando para descrever algo :
+- DESCRIBE nome ;
+	
+	
+- Tipos Primitivos do MySql :
+
+- Numérico - Inteiro, Real e Lógico
+	- Inteiro : TinyInt, SmallInt, Int, MediumInt, BigInt.
+	- Real : Decimal, Float, Double, Real
+	- Lógico : Bit, Boolean
+
+
+- Data e Tempo 
+	Date, DateTime, TimeStamp, Time, Year
+
+- Literal - Caractere, Texto, Binário, Coleção
+	- Caractere : Char, VarChar
+	- Texto : TinyText, Text, MediumText, LongText
+	- Binário : TinyBlob, Blob, MediumBlob, LongBlob.
+	- Coleção : Enum, Set
+
+- Espaciais 
+	- Geometry, Point, Polygon, MultiPolygon
