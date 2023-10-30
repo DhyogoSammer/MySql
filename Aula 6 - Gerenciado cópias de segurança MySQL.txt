@@ -1,0 +1,4 @@
+- Aula 6 - Gerenciando cópias de segurança MySQL
+
+- O backup de um banco de dados é chamado de DUMP.
+- Exportação e Importação de banco de dados.

@@ -1,0 +1,56 @@
+- Aula 5 - Manipulando Registros (UPDATE, DELETE e TRUNCATE)
+
+- Tudo que estiver em linha é registro.
+- Tudo que estiver em coluna é campo.
+
+- Comando UPDATE 
+- Comando UPDATE serve para modificar uma linha.
+- Por exemplo : 
+
+- UPDATE cursos 
+SET nome = 'HTML5'
+WHERE idcurso = '1';
+
+- UPDATE significa Atualiza 
+- SET significa Configure
+- WHERE significa Onde 
+
+- Se eu quiser mudar dois registros de uma linha :
+
+- UPDATE cursos
+- SET nome = 'PGP', ano = '2015'
+- WHERE idcurso = '4';
+
+- Usar o Limit para limitar a ação do meu comando, se eu quiser q a mudança só afete uma linha.
+
+- UPDATE cursos 
+- SET nome = 'Java', carga = '10', ano = '2000'
+-WHERE idcursos = '5'
+- LIMIT 1; 
+
+- Usar o LIMIT é seguro pois se a gente digitar um comando errado, usando o limit só vai afetar uma linha e não o banco todo.
+
+- Removendo uma linha do banco de dados
+
+- Comando DELETE FROM nome 
+- Delete da tabela nome 
+
+- Por exemplo :
+DELETE FROM cursos
+WHERE idcurso = '7';
+
+- Deletando varias linha ao mesmo tempo (PERIGOSO)
+DELETE FROM cursos
+WHERE ano = '2018';
+
+- Importante usar o LIMIT
+
+- Deletando Todas as linhas da tabela (PERIGOSO)
+TRUNCATE TABLE cursos ;
+
+- Comando perigoso vai apagar todos os dados da tabela.
+
+- Esses 3 comandos que a gente viu acima são : Exemplos de DML ( Comandos de manipulação de dados).
+UPDATE 
+DELETE 
+TRUNCATE

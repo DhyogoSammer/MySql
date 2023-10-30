@@ -1,0 +1,34 @@
+- Aula 2 - Melhorando Banco de Dados -
+
+- Para excluir um banco de dados
+- Comando = DROP DATABASE nome ; = Com isso vai deletar o banco de dados escolhido
+
+- Melhorando Banco de dados : 
+- CREATE DATABASE cadastro	
+DEFAULT CHARACTER SET utf8
+DEFAULT COLLATE utf8_general_ci; 
+
+- Com esse comando acima vamos criar um banco de dados já com os caracteres no padrão UTF-8 que possuem acentuações.
+- Constraints = São regras do SQL.
+
+CREATE TABLE pessoas ( 
+id INT NOT NULL AUTO_INCREMENT,
+nome VARCHAR (30) NOT NULL,
+nascimento DATE,
+sexo ENUM ('M','F'),
+peso DECIMAL (5,2),
+altura DECIMAL (3,2),
+nacionalidade VARCHAR (20) DEFAULT 'Brasil',
+PRIMARY KEY (id)
+)DEFAULT CHARSET = utf8;
+
+- NOT NULL = Uma regra que diz que voce tem que preencher os dados.
+- ENUM = Com parenteses e aspas, só vai aceitar aqueles valores ali para aquela variável.
+- peso DECIMAL (5,2) = Esse 5 serve para dizer que vão ser 5 casas e o 2 serve para dizer que só vai aceitar 2 casas apos a virgula = 102,35kg
+- Altura DECIMAL (3,2) = O 3 vai servir para dizer que são 3 casas ao total e que vai ter 2 casas apos a virgula = 1,83m
+- nacionalidade VARCHAR (20) DEFAULT 'Brasil' = Aqui se ninguem digitar nada, por padrão será Brasil.
+- Campo chave primária = Não se repete.
+- Constraint = AUTO_INCREMENT = A primeira pessoa que eu cadastrar vai ser codigo1, a segunda codigo2, a tereceira codigo3
+tudo isso automaticamente.
+- PRIMARY KEY = Minha chave primária, onde vou adicionar os campos ou campo onde os valores não vão poder se repetir.
+

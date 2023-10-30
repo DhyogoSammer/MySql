@@ -1,0 +1,52 @@
+- Aula 3 - Inserindo dados na tabela (INSERT INTO)
+
+- Comandos "CREATE DATABASE" , "CREATE TABLE" são comandos DDL do SQL
+- DDL = 'Data Definition Languange', ou Linguagem de Definição de Dados
+- O que muda é a letra do meio = Sempre será Data ' ' Languange
+
+- Primeiro passo para inserir dados na minha tabela
+- Colocar os campos em uma tupla = (id,nome,nascimento,sexo,enum,peso,altura,nacionalidade)
+- Pula uma linha
+- Em baixo colocar uma tupla com os dados a serem inseridos e entre aspas simples 
+Exemplo : 
+(id,nome,nascimento,sexo,enum,peso,altura,nacionalidade)
+
+('1', 'Dhyogo', '2001-09-05', 'M', '88.5', '1.83', 'Brasil');   # Vai ser na ordem dos campos la encima.
+
+# Para adicionarmos agora vamos fazer :
+INSERT INTO pessoas
+(id,nome,nascimento,sexo,enum,peso,altura,nacionalidade)
+VALUES 
+('1', 'Dhyogo', '2001-09-05', 'M', '88.5', '1.83', 'Brasil');
+
+# Ou seja INSERT INTO = Significa Insira na tabela "Nome"
+VALUES = Os valores abaixo.
+
+# Não preciso especificar o ID = que nesse caso acima é 1 , porque o próprio sistema vai gerar o codigo.
+
+# Mas também posso fazer o seguinte :
+INSERT INTO pessoas
+(id,nome,nascimento,sexo,enum,peso,altura,nacionalidade)
+VALUES 
+(DEFAULT, 'Dhyogo', '2001-09-05', 'M', '88.5', '1.83', 'Brasil'); # DEFAULT = Significa padrão, ou seja, vai ser o padrão do ID, se eu não informar o valor vai ser o próximo ID da ordem.
+# Nas constraints como DEFAULT acima não usa aspas.
+
+- Se os valores da minha tabela estiver na ordem dos meus campos :
+(id,nome,nascimento,sexo,enum,peso,altura,nacionalidade) = Nessa ordem, a gente pode ocultar essa tupla
+Assim :
+INSERT INTO pessoas 
+VALUES
+('1', 'Dhyogo', '2001-09-05', 'M', '88.5', '1.83', 'Brasil');
+
+- Como cadastrar várias pessoas ao mesmo tempo ? 
+INSERT INTO pessoas
+(id,nome,nascimento,sexo,enum,peso,altura,nacionalidade)
+VALUES 
+(DEFAULT, 'Dhyogo', '2001-09-05', 'M', '88.5', '1.83', 'Brasil'),
+(DEFAULT, 'Pablo', '2010-12-08, 'M', '65.5', '1.80', 'Portugual'),
+(DEFAULT, 'Ana', '1995-04-31', 'F', '75.2', '1.82', 'Irlanda');
+
+- Comando INSERT INTO é da classe DML 
+- DML = Data Manipulation Languange = Ou seja comando de manipulação de dados.
+
+

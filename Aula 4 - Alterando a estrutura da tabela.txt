@@ -1,0 +1,73 @@
+- Aula 4 - Alterando a estrutura a tabela (ALTER TABLE e DROP TABLE)
+
+- Columns ou colunas são os campos do MySQL.
+
+- Comando ALTER TABLE nome = Serve para alterar a tabela.
+- Comando ADD COLUMN nome = Serve para adicionar um campo novo a tabela.
+
+# Aqui sempre vai adicionar ao final da tabela.
+
+- Comando DROP COLUMN nome = Serve para remover um campo da tabela.
+- Adicionar um campo depois de outro
+	ALTER TABLE
+	ADD COLUMN profissao VARCHAR(10) AFTER nome;
+	
+# Ai vai adicionar o campo profissão depois de nome
+
+- Adicionar um campo como o primeiro
+	ALTER TABLE pessoas
+	ADD COLUMN profissão VARCHAR(10) FIRST ;
+	
+# Ai vai adicionar o campo profissão antes de nome.
+
+- Mudando o tipo primitivo do campo.
+	ALTER TABLE pessoas
+	MODIFY COLUMN profissão VARCHAR(20);
+	
+- Adicionando uma constraint não nula para um valor nulo.
+	ALTER TABLE pessoas
+	MODIFY COLUMN profissao VARCHAR(20) NOT NULL;
+	
+# Nesse caso acima, a profissão era nulo, mas eu  coloquei o valor não nulo, nesse caso vai da um conflito, para resolvir isso :
+
+	ALTER TABLE pessoas
+	MODIFY COLUMN profissao VARCHAR(20) NOT NULL DEFAULT ' ';
+	
+# Com isso vai deixar os valores vazios
+
+- Mudando o nome do campo.
+	ALTER TABLE pessoas
+	CHANGE COLUMN profissão prof VARCHAR(20); 
+	
+# Ou seja, nesse caso colocamos primeiro valor antigo e depois colocamos o valor noovo
+# Nesse caso o valor antigo vai ser profissão e o novo vai ser prof
+
+- Mudando o nome da tabela inteira.
+	ALTE TABLE pessoas
+	RENAME TO gafanhotos;
+	
+
+- Criando outra tabela
+	CREATE TABLE IF NOT EXISTS cursos (
+	nome VARCHAR(30) NOT NULL UNIQUE,
+	descricao TEXT,
+	carga INT UNSIGNED,
+	totaulas INT,
+	ano YEAR DEFAULT ('2023')
+	)DEFAULT CHARSET = utf8;
+	
+# Explicando essa tabela acima
+# Esse IF NOT EXISTS significa que só vai criar a tabela cursos se a mesma não existir.
+# A Constraint UNIQUE no nome vai dizer que não pode colocar dois cursos com o mesmo nome.
+# A Constraint UNSIGNED significa sem sinal, ou seja, vão sempre ser valores positivos.
+
+
+- Adicionando chave primária na tabela .
+	ALTER TABLE cursos
+	ADD PRIMARY KEY(idcurso);
+	
+- Apagando minha tabela do banco de dados ;
+	DROP TABLE cursos;
+	
+- Os dois comandos : ALTER TABLE e DROP TABLE São comandos DDL.
+	

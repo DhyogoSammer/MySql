@@ -1,0 +1,12 @@
+- Aula 7 - PhpMyAdmin part 1
+
+- Para abrir o console do MySql Com o Xamp 
+- Temos que primeiro abrir o CMD e digitar o seguinte comando : mysql -h localhost -u root -p
+
+- Para mostrar os bancos de dados = SHOW DATABASES;
+- Para mostrar qual banco de dados está sendo utilizado = STATUS;
+
+- Para mostrar as tabelas = SHOW TABLES;
+- Para mostrar as tabelas como são = DESCRIBE nome;
+
+- Usar o PhpMyAdmin para treinar
