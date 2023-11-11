@@ -1,2 +1,2 @@
 # MySql
- Banco de dados 
+ Anotações sobre o banco de dados MySQL.
