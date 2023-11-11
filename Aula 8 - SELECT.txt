@@ -1,0 +1,68 @@
+- Aula 8 - Comando SELECT
+
+- SELECT * FROM nome ; = Vai selecionar tudo da tabela .
+
+- Colocando em ordem com SELECT 
+
+- SELECT * FROM cursos
+ORDER BY nome ; = Aqui vai selecionar tudo da tabela cursos ordenando pelo o nome, ou seja, vai ordernar em ordem alfabética.
+
+- Se eu quiser inverter a ordem 
+
+- SELECT * FROM cursos 
+ORDER BY nome DESC; = Aqui vai selecionar tudo da tabela cursos ordenando pelo o nome, agora de baixo pra cima, na ordem inversa.
+
+- Selecionando algumas colunas invés de todas 
+- SELECT nome, carga, ano FROM cursos 
+ORDER BY nome ; = Vai selecionar apenas as colunas nome, carga e ano, com nome em ordem alfabética.
+
+- Ordenando mais de uma coluna 
+- SELECT ano, carga, nome FROM cursos 
+ORDER BY ano, nome; = Vai selecionar apenas as colunas nome, carga e ano, com o ano em ordem e o nome em ordem também por ano. 
+
+A ordem importa : encima vai aparecer primeiro a coluna ano, depois carga e por terceiro os nomes.
+
+- Filtrando linhas com o SELECT 
+
+- SELECT * FROM cursos 
+WHERE ano = '2016'
+ORDER BY nome; Ou seja vai selecionar todos os cursos onde o ano seja de 2016 e vai ordernar por ordem alfabética.
+
+- Query = É uma pergunta, uma solicitação.
+
+- Filtrando linhas com o SELECT usando operadores relacionais.
+
+- SELECT nome, descricao, ano FROM cursos 
+WHERE ano <= '2015' 
+ORDER BY ano, nome; Ou seja vai selecionar todos os cursos onde o ano seja de 2015 pra baixo e vai ordernar em ordem alfabética.
+
+# A ordem no comando ORDER BY importa e interfere no resultado.
+
+- Outros operadores importantes.
+
+- OPERADOR =  BETWEEN
+
+- SELECT * FROM cursos 
+WHERE totaulas BETWEEN '20' AND '30'
+ORDER BY nome; Ou seja vai selecionar todos os cursos onde o totaulas esteja entre '20' e '30, BETWEEN Significa entre algo.
+
+- OPERADOR =  IN 
+
+- SELECT idcurso, nome FROM cursos 
+WHERE ano IN('2014', '2016', '2018')
+ORDER BY nome; = No caso ai com o operador IN, vai mostrar os cursos onde o ano seja 2014, 2016 e 2018, Não vai mostrar outros cursos de outros anos, só desses anos.
+
+- Combinando Testes 
+
+- OPERADOR LÓGICO = AND 
+- SELECT nome, carga, totaulas FROM cursos
+WHERE carga > 35 and totaulas < 30
+ORDER BY ano, nome; = No caso ai com operador lógico and, vai mostrar os cursos onde a carga seja maior que 35 e o totaulas seja menor que 30, ou seja, onde as duas condições são verdadeiras.
+
+- OPERADOR LÓGICO = OR 
+- SELECT nome, carga, totaulas FROM cursos
+WHERE carga > 35 OR totaulas < 30
+ORDER BY ano, nome; No caso ai com o operador or, vai mostrar os cursos onde a carga seja maior que 35 ou o totaulas seja menor que 30, ou seja, só precisa uma condição ser verdadeira.
+
+- SELECT faz parte do DQL = DATA QUERY LANGUAGE
+- Select faz parte da linguagem de questionamentos.

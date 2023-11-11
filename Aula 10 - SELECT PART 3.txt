@@ -1,0 +1,33 @@
+- Aula 10 -  Comando SELECT Parte 3 
+
+- Agrupando Registros
+- Usando o comando GROUP BY = Significa Agrupado
+
+- Por exemplo :
+- SELECT carga FROM cursos
+GROUP BY carga; = Vai retornar as cargas ordenadas e sem repetições agrupadas.
+
+- Outro exemplo :
+- Se eu usar o COUNT junto por exemplo :
+- SELECT COUNT(carga), carga FROM cursos 
+GROUP BY carga ; = Vai mostrar as cargas ordenadas e sem repetições agrupadas e mostrar quantas cargas cada grupo possui.
+
+- Utilizando o GROUP BY mais o HAVING
+- Having = Tendo
+
+- Por Exemplo : 
+- SELECT ano, COUNT(*) FROM cursos
+GROUP BY ano
+HAVING COUNT(ano) >= '4'; = Vai mostrar os anos e a quantidade de cursos de cada ano, mas só dos anos que possuam mais de 4 cursos ou 
+iguais a 4 cursos.
+- O Having so aceita o campo que foi agrupado.
+- Por exemplo : Eu agrupei por ano, o Having só vai aceitar o ano.
+
+- Selecionando e contando os cursos que possuem carga maior que a média de todos os cursos .
+
+- Por exemplo : 
+- SELECT carga,COUNT(*) FROM cursos
+WHERE ano > '2015'
+GROUP BY carga
+HAVING carga > (SELECT AVG(carga) FROM cursos) ; # Aqui vai mostrar as e contar as quantidades de carga onde o  ano seja maior que 2015
+e a carga seja maior que a média da carga de todos os cursos.

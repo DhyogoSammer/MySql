@@ -1,0 +1,81 @@
+- Aula 9 - Comando SELECT Parte 2
+
+- Usando o Operador LIKE 
+
+- Like no SQL = significa parecido ou semelhante.
+- Por exemplo :
+
+- SELECT * FROM Cursos
+WHERE nome LIKE 'P%'; = Vai selecionar os cursos que começam com a letra P.
+- O simbolo de porcentagem significa que vai trocar os restos das palavras por vários caractere ou nenhuma palavra.
+- Nesse caso, vai mostrar os cursos que começam com P alguma coisa ou também ,se tiver, um curso que tenha só a letra P.
+- A ordem do porcento importa totalmente.
+
+
+- Utilizando WILD CARDS 
+
+- A ordem do porcento importa totalmente 
+- Se eu colocar assim 'A%'; = Vai retornar os cursos que começam com a letra A.
+- Já, se eu colocar assim '%A';= Vai retornar os cursos que terminam com a letra A.
+
+- Por exemplo : 
+- SELECT * FROM cursos 
+WHERE nome LIKE '%A'; = Nesse caso, vai selecionar os cursos que terminam com A.
+
+- Selecionando uma letra em qualquer posição
+
+- Por exemplo : 
+- SELECT * FROM cursos 
+WHERE nome LIKE '%A%'; Nesse caso, vai selecionar todos os cursos que possuam a letra A, independente da posição da letra, seja, no inicio, no meio ou no fim.
+
+- Outro Exemplo : 
+- SELECT * FROM cursos 
+WHERE nome not LIKE '%A%'; Nesse caso, vai selecionar todos os cursos que não possuam A na frase.
+
+- Outro Exemplo : 
+- SELECT * FROM cursos 
+WHERE nome LIKE 'PH%P'; = Nesse caso, vai selecionar todos os cursos que comecem com 'PH' e terminam com 'P'.
+
+- Outra WILD CARD 
+- SELECT * FROM cursos 
+WHERE nome LIKE 'PH%P_'; = Nesse caso, vai selecionar todos os cursos que comecem com 'PH', terminem com 'P' e tenha algo no final.
+- Diferente da % o _ Obriga que tenha um caractere ali. 
+
+
+- Distiguindo coisas 
+
+- Comando DISTINCT seleciona os dados uma só vez, por exemplo, se um dado se repetir mais de uma vez, ele vai colocar aquele dado só uma vez.
+- Por exemplo :
+
+- SELECT DISTINCT carga FROM cursos ; = Vai retornar os valores 40,30,20,10,5, O valo de 40 se repete várias vezes, mas com o DISTINCT, só será mostrado uma vez.
+
+
+- Usando FUNÇÕES DE AGREGAÇÃO
+
+- Usando a função COUNT = Vai contar quantos registros existem naquele BD
+- Por exemplo :
+- SELECT COUNT(*) FROM cursos ; = Vai contar quantos cursos existem no BD 
+
+- Outro exemplo : 
+- SELECT COUNT(*) FROM cursos 
+WHERE carga > 40; = Vai contar quantos cursos existem no BD com carga acima de 40 Horas.
+
+- Usando a função MAX = Vai ver qual é o valor máximo em um campo.
+- Por exemplo :
+- SELECT MAX(carga) FROM cursos ; = Nesse caso, vai selecionar o valor máximo no campo da carga.
+
+- Outro exemplo :
+- SELECT MAX(totaulas) FROM cursos
+WHERE ano = '2016'; Ou seja, vai selecionar a maior quantidade de aulas do ano de 2016.
+
+- Usando a função MIN = vai ver qual é o valor minimo em um campo.
+- Por exemplo :
+- SELECT MIN(totaulas) FROM cursos ; Vai selecionar a menor quantidade de aulas.
+
+- Usando a função SUM = Vai somar os campos selecionados.
+- Por exemplo :
+- SELECT SUM(totaulas) FROM cursos ; Vai somar a quantidade de aulas de todos os cursos.
+
+- Usando a função AVG = Vai tirar a média dos campos selecionados.
+- Por exemplo :
+- SELECT AVG(totaulas) FROM cursos ; Vai tirar a média da quantidade de aulas de todos os cursos.

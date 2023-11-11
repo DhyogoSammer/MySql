@@ -1,0 +1,81 @@
+- Aula 12 - Chaves Estrangeiras e JOIN
+
+- Relacioando as tabelas 
+
+- Engine = A maquina que vai poder criar registros 
+- InnoDB = Engine mais usada.
+- Exista MyIsam que é mais antiga e o XtraDB que é mais recente. 
+
+- InnoDB e XtraDB suportam as 4 principais regras de uma boa transação
+- Transação = Tudo aquilo que você pedir para o banco de dados e ele executar .
+- Dividido em 4 regras (ACID) :
+
+- A = Atomicidade = Transação Atômica, ou a transação vai ser completa ou nada vai ser considerado.
+- C = Consistência = Caso o banco de dados antes da transação esteja consistente, depois da transação ele vai estar também consistente.
+- I = Isolamento = Se eu tenho dois usuários que pedem duas transações ao mesmo tempo, elas não podem interferir uma na outra, elas acontecem de forma isolada, uma não interefe na outra.
+- D = Durabilidade = Transação Durável, manter o dado do cliente durável por tempo necessário. 
+
+- O InnoDB permite a relação com chaves estrangeiras
+
+- Comando para adicionar uma Chave Estrangeira : 
+
+- ALTER TABLE gafanhotos 
+ADD FOREIGN KEY (cursopreferido)
+REFERENCES curso (idcurso) ; = Significa que o cursopreferido da tabela gafanhotos está ligado ao idcurso da tabela curso .
+- idcurso seria minha chave primária
+- Vai mostrar que o cursopreferido vai ser chave MUL, nesse caso seria uma chave múltipla ou chave estrangeira. 
+
+- Integridade Referencial 
+
+- A gente só consegue apagar os dados de uma entidade se elas não possuirem relações
+- Caso os dados de uma entidade possuam relações com outros dados de outra tabela, o sistema não vai conseguir apagar os dados.
+
+- Junções do SQL 
+
+- Comando JOIN = Para juntar tabelas e dados. 
+- Sempre que usar o JOIN, usar também a clausula ON.
+- Por exemplo :
+- SELECT gafanhotos.nome, cursos.nome, cursos.ano
+FROM gafanhotos JOIN cursos 
+ON cursos.idcurso = gafanhotos.cursopreferido ; 
+
+- Vamos explicar o código acima
+- Seleciona da tabela gafanhotos o campo nome, da tabela cursos os campos nome e ano,  junte gafanhotos com nome,
+Em relação com minha chave primária que vai ser idcurso = chave estrangeira que vai ser cursopreferido, ou seja, vai relacionar as duas.
+
+- O JOIN sozinho é chamado de INNER JOIN = Junção Interna, que é um JOIN somente com as relações. 
+- O INNER JOIN vai ver o que tem de relações nas duas tabelas e juntar os dados.
+
+- Por exemplo : 
+- SELECT gafanhotos.nome, cursos.nome, cursos.ano
+FROM gafanhotos INNER JOIN cursos 
+ON cursos.idcurso = gafanhotos.cursopreferido ; 
+
+- Outro exemplo : 
+- SELECT gafanhotos.nome, cursos.nome, cursos.ano
+FROM gafanhotos INNER JOIN cursos 
+ON cursos.idcurso = gafanhotos.cursopreferido 
+ORDER BY gafanhotos.nome ; = Vai ordernar por nome de gafanhotos
+
+- Colocando apelidos nas minhas tabelas = COMANDO (AS)
+- Por exemplo :  
+- SELECT gafanhotos.nome, cursos.nome, cursos.ano
+FROM gafanhotos AS g INNER JOIN cursos AS c
+ON cursos.idcurso = gafanhotos.cursopreferido 
+ORDER BY gafanhotos.nome ; = Defini gafanhotos como g e cursos como c, assim o código ficara menor, dessa forma.
+
+- SELECT g.nome, c.nome, c.ano
+FROM gafanhotos AS g INNER JOIN cursos AS c
+ON c.idcurso = g.cursopreferido 
+ORDER BY g.nome 
+
+- Usando o LEFT JOIN e o RIGHT JOIN 
+- Por exemplo : 
+SELECT g.nome, c.nome, c.ano
+FROM gafanhotos AS g LEFT  JOIN cursos AS c
+ON c.idcurso = g.cursopreferido ; Nesse caso, vai da preferência para mostrar os dados da tabela a esquerda que nesse caso vai ser gafanhotos. 
+
+- Por exemplo : 
+SELECT g.nome, c.nome, c.ano
+FROM gafanhotos AS g RIGHT  JOIN cursos AS c
+ON c.idcurso = g.cursopreferido  ; = Nesse caso, vai da preferência para mostrar os dados da tabela a direita que nesse caso vai ser cursos. 

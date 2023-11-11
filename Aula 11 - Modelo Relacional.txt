@@ -1,0 +1,89 @@
+- Aula 10 - Modelo Relacional
+
+- Modelo Relacional = Os dados do banco de dados possuem relações entre si.
+
+- Entidade = Trata-se basicamente de um container onde a gente vai colocar dados sobre algumas pessoas ou algo.
+- Atributos = São os dados que estão contidos nas Entidades, ou seja, vão compor os dados que compõe cada um dos elementos da Entidade. 
+
+- Atributos chave primária = Não pode se repetir.
+
+- Da pra relacionar duas Entidades ? 
+- Sim 
+
+- Por exemplo :
+- Entidade = gafanhotos se relacionar com a Entidade = cursos.
+- Ou seja, gafanhotos assiste cursos 
+- Esse assiste séria o relacionamento que liga as duas Entidades.
+
+- Nesse sentido , Entidade = gafanhotos assiste Entidade = cursos 
+- É um exemplo de Diagrama E-R = Ou seja, Diagrama Entidade-Relacionamento, ou apenas, DER.
+
+- Especificamente em relação aos bancos de dados, a cardinalidade é geralmente uma medida de quantos valores distintos você tem em uma coluna em comparação com o número de linhas.
+- Ou seja, digamos que tenhamos o seguinte exemplo :
+- Temos duas entidades que se relacionam = gafanhotos assiste cursos 
+- Dentro da entidade gafanhotos temos : duas pessoas, Maria e João.
+- Dentro da entidade cursos temos : dois cursos, Html5 e Python.
+- Maria assiste só o curso de HTML5.
+- João assiste o curso de HTML5 e Python 
+- Ou seja, gafanhotos assiste n cursos.
+- E por quantas pessoas os cursos são assistidos.
+- HTML5 é assistido por 2 pessoas e Python por uma pessoas.
+- Ou seja, cursos são assistidos n vezes por gafanhotos.
+
+- Ou seja, cada um dos gafanhotos para n cursos 
+- E cada um dos cursos para n gafanhotos. 
+
+- Esse séria um exemplo de relacionamento Muitos-Para-Muitos.
+
+- Outro tipo de relacionamento importante 
+- Por exemplo :
+Entidade = Marido casa com Entidade = Esposa 
+Dentro da entidade marido temos 3 homens 
+Dentro da entidade esposa temos 2 mulheres
+- Cada homem vai se casar apenas com uma mulher 
+
+- No final teremos um relacionamento de Um-Para-Um
+
+- Outro tipo de relacionamento importante 
+- Por exemplo : 
+Entidade = Funcionarios cuida de Entidade = Dependentes
+dentro da entidade funcionarios temos 3 pessoas
+dentro da entidade dependentes temos 3 pessoas
+- Cada Funcionarios pode ter nenhum dependete, 1 dependete ou vários dependentes.
+- Já os dependetes só podem ter um funcionário.
+
+- Nesse caso teremos um relacionamento de Um-Para-Muitos.
+
+- Conceito de Chave Estrangeira 
+- Chave Estrangeira = É a chave primária de alguma Entidade que vai para outra Entidade .
+
+- Usando chave estrangeira em relacionamento de um-para-um
+- Por exemplo :
+- No exemplo : Entidade = Marido casa com Entidade = Esposa 
+- Na entidade Marido vamos ter os atributos : Cpf-marido (PrimaryKey), nome, nascimento e nacionalidade
+- Na entidade Esposa vamos ter os atributos : Cpf-esposa (PrimaryKey), nome, nascimento e nacionalidade 
+
+- Nesse caso, temos que ver quem é a entidade dominante, nesse sentido vamos definir como a entidade Marido.
+- Assim a chave primária da esposa que é o Cpf-esposa vai para a Entidade Marido, onde a chave primária Cpf-esposa vai passar a ser uma chave estrangeira da Entidade Marido.
+
+- Usando chave estrangeira em relacionamento de um-para-muitos
+- Por exemplo :
+- No exemplo : Entidade = Funcionarios cuida de Entidade = Dependentes. 
+- Na entidade Funcionarios vamos ter os atributos : cpf (PrimaryKey), nome, cargo e especialidade 
+- Na entidade Dependentes vamos ter os atributos : cpf (PrimaryKey), nome, nascimento e nacionalidade.
+
+- Nesse caso, vamos sempre jogar a chave primária do lado que é um e joga como chave estrangeira para o lado muitos é sempre assim .
+- Assim a chave primária da entidade Funcionários que é o cpf vai para a entidade Dependentes onde passará a ser uma chave estrangeira chamada de cpf-funcionarios.
+
+- Usando chave estrangeira em um relacionamento de muitos-para-muitos 
+- Por exemplo : 
+- No exemplo : Entidade = Clientes compra Entidade = Produtos 
+- O relacionamento compra vai virar uma Entidade 
+- Dessa forma vamos ter Entidade = Clientes sendo 1, Entidade compra sendo n e Entidade Produtos sendo 1.
+- Ou seja, cada cliente compra várias vezes cada produto 
+- Na entidade Clientes vamos ter os atributos : cpf(PrimaryKey), nome, endereço e telefone
+- Na entidade Produtos vamos ter os atributos : cod-prod(PrimaryKey), nome, fabricante e o preço.
+- N entidade aogra Compras vamos ter os atributos : id-compra(PrimaryKey), data, formato-pago.
+
+- Como o relacionamento compras virou uma entidade agora, As chaves primárias de Clientes e Produtos que são 1 vão para a entidade compras que é uma entidade muitos.
+- Transformando assim o relacionamento de muitos-para-muitos em um-para-muitos.
